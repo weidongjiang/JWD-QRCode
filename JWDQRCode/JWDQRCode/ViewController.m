@@ -25,9 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    self.view.backgroundColor = [UIColor greenColor];
+    CGFloat X = (self.view.frame.size.width - 2*100)/3.0;
     
-    _code = [[UIButton alloc] initWithFrame:CGRectMake(20, 100, 100, 60)];
+    _code = [[UIButton alloc] initWithFrame:CGRectMake(X, 100, 100, 60)];
     _code.backgroundColor = [UIColor yellowColor];
     [_code setTitle:@"扫一扫" forState:UIControlStateNormal];
     [_code setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
@@ -35,7 +35,7 @@
     [self.view addSubview:_code];
     
     
-    _code1 = [[UIButton alloc] initWithFrame:CGRectMake(20, 200, 100, 60)];
+    _code1 = [[UIButton alloc] initWithFrame:CGRectMake(2*X + 100, 100, 100, 60)];
     _code1.backgroundColor = [UIColor yellowColor];
     [_code1 setTitle:@"生成二维码" forState:UIControlStateNormal];
     [_code1 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
@@ -56,7 +56,7 @@
 
 - (void)code1DidClick {
 
-    JWDCreatQRCodeView *creatQRCodeView = [[JWDCreatQRCodeView alloc] initWithFrame:CGRectMake((self.view.frame.size.width-100)*0.5, 300, 100, 100) withQRCodeString:@"http://www.jianshu.com/users/5b9953c3d3ad/latest_articles" withQRCodeCenterImage:@"me"];
+    JWDCreatQRCodeView *creatQRCodeView = [[JWDCreatQRCodeView alloc] initWithFrame:CGRectMake((self.view.frame.size.width-200)*0.5, 300, 200, 200) withQRCodeString:@"http://www.jianshu.com/users/5b9953c3d3ad/latest_articles" withQRCodeCenterImage:@"me"];
     [self.view addSubview:creatQRCodeView];
     
 }

@@ -45,7 +45,7 @@
 }
 - (void)initUiConfig {
     
-    _backBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 40, 20)];
+    _backBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 50, 40, 20)];
     [_backBtn setTitle:@"返回" forState:UIControlStateNormal];
     [_backBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_backBtn addTarget:self action:@selector(backButtonDid) forControlEvents:UIControlEventTouchUpInside];
@@ -72,6 +72,7 @@
         _lineImageView.frame = CGRectMake(30, 10, 220, 2);
     }];
 }
+
 - (void)backButtonDid {
 
     if (self.backPreView){
