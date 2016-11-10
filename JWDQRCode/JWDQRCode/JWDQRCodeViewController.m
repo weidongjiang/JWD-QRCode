@@ -31,6 +31,9 @@
     }
     return self;
 }
+
+
+
 -(void)initUiConfig {
 
     // 默认为后置摄像头
@@ -60,6 +63,12 @@
     [self.view addSubview:preView];
     preView.session = self.session;
     
+    preView.backPreView = ^(JWDPreView *backPreView){
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+    
+    };
+    
     [self.session startRunning];
 
 
@@ -71,13 +80,14 @@
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
-    [self.session stopRunning];
-    [self.preView removeFromSuperview];
+//    [self.session stopRunning];
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self.preView removeFromSuperview];
     
     for (AVMetadataMachineReadableCodeObject *obj in metadataObjects) {
         
         NSLog(@"%@",obj.stringValue);
-        
+    
         SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:obj.stringValue]];
         [self presentViewController:safariVC animated:YES completion:nil];
     }

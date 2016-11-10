@@ -35,6 +35,26 @@
     [qrFilter setValue:data forKey:@"inputMessage"];
     CIImage *codeImage = qrFilter.outputImage;
     
+    
+    // 如果要生成的二维码带有颜色 就打开2.1操作
+    
+     //2.1创建颜色过滤器
+//    CIFilter *colorFilter = [CIFilter filterWithName:@"CIFalseColor"];
+//    // 2.1.2设置默认值
+//    [colorFilter setDefaults];
+//     //2.1.3输入内容
+//    /*
+//     inputImage   要画颜色的图片
+//     inputColor0  前景色
+//     inputColor1  背景色
+//     */
+//    [colorFilter setValue:codeImage forKey:@"inputImage"];
+//     //必须要使用CIColor
+//    [colorFilter setValue:[CIColor colorWithRed:1 green:0 blue:0] forKey:@"inputColor0"];
+//    [colorFilter setValue:[CIColor colorWithRed:0 green:1 blue:0] forKey:@"inputColor1"];
+//    codeImage = colorFilter.outputImage;
+    
+    
     // 3 拉伸
     codeImage = [codeImage imageByApplyingTransform:CGAffineTransformMakeScale(9, 9)];
     
