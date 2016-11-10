@@ -13,7 +13,6 @@
 
 @implementation JWDCreatQRCodeView
 
-
 - (instancetype)initWithFrame:(CGRect)frame withQRCodeString:(NSString *)qRCodeString withQRCodeCenterImage:(NSString *)qRCodeCenterImage
 {
     self = [super initWithFrame:frame];

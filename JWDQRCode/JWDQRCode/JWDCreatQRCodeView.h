@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface JWDCreatQRCodeView : UIImageView
+
 - (instancetype)initWithFrame:(CGRect)frame withQRCodeString:(NSString *)qRCodeString withQRCodeCenterImage:(NSString *)qRCodeCenterImage;
+
 @end
 

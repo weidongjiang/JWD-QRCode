@@ -63,14 +63,19 @@
     [self.view addSubview:preView];
     preView.session = self.session;
     
+    
     preView.backPreView = ^(JWDPreView *backPreView){
         
         [self dismissViewControllerAnimated:YES completion:nil];
-    
+        
+        // 销毁定时器
+        if (backPreView.timer){
+            [backPreView.timer invalidate];
+            backPreView.timer = nil;
+        }
     };
     
     [self.session startRunning];
-
 
 }
 
@@ -80,19 +85,11 @@
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
-//    [self.session stopRunning];
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//    [self.preView removeFromSuperview];
     
     for (AVMetadataMachineReadableCodeObject *obj in metadataObjects) {
-        
-        NSLog(@"%@",obj.stringValue);
-    
         SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:obj.stringValue]];
         [self presentViewController:safariVC animated:YES completion:nil];
     }
-    
-    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

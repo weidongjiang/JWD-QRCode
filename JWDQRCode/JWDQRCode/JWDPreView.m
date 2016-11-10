@@ -12,7 +12,6 @@
 {
     UIImageView   *_imageView;
     UIImageView   *_lineImageView;
-    NSTimer       *_timer;
     UIButton      *_backBtn;
 }
 
@@ -51,7 +50,6 @@
     [_backBtn addTarget:self action:@selector(backButtonDid) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_backBtn];
     
-    
     _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pick_bg.png"]];
     _imageView.frame = CGRectMake(self.bounds.size.width * 0.5 - 140, self.bounds.size.height * 0.5 - 140, 280, 280);
     [self addSubview:_imageView];
@@ -71,6 +69,7 @@
     } completion:^(BOOL finished) {
         _lineImageView.frame = CGRectMake(30, 10, 220, 2);
     }];
+    NSLog(@"88888888888888888888");
 }
 
 - (void)backButtonDid {
@@ -78,7 +77,7 @@
     if (self.backPreView){
         self.backPreView(self);
     }
-
 }
+
 
 @end
