@@ -13,6 +13,8 @@
 		766A1F7C1DD40F9A0039FA38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766A1F7A1DD40F9A0039FA38 /* Main.storyboard */; };
 		766A1F7E1DD40F9A0039FA38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 766A1F7D1DD40F9A0039FA38 /* Assets.xcassets */; };
 		766A1F811DD40F9A0039FA38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766A1F7F1DD40F9A0039FA38 /* LaunchScreen.storyboard */; };
+		766A1F8A1DD428640039FA38 /* JWDPreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 766A1F891DD428640039FA38 /* JWDPreView.m */; };
+		766A1F8D1DD450890039FA38 /* JWDQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766A1F8C1DD450890039FA38 /* JWDQRCodeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		766A1F7D1DD40F9A0039FA38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		766A1F801DD40F9A0039FA38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		766A1F821DD40F9A0039FA38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		766A1F881DD428640039FA38 /* JWDPreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWDPreView.h; sourceTree = "<group>"; };
+		766A1F891DD428640039FA38 /* JWDPreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWDPreView.m; sourceTree = "<group>"; };
+		766A1F8B1DD450890039FA38 /* JWDQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWDQRCodeViewController.h; sourceTree = "<group>"; };
+		766A1F8C1DD450890039FA38 /* JWDQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWDQRCodeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,10 @@
 				766A1F751DD40F9A0039FA38 /* AppDelegate.m */,
 				766A1F771DD40F9A0039FA38 /* ViewController.h */,
 				766A1F781DD40F9A0039FA38 /* ViewController.m */,
+				766A1F8B1DD450890039FA38 /* JWDQRCodeViewController.h */,
+				766A1F8C1DD450890039FA38 /* JWDQRCodeViewController.m */,
+				766A1F881DD428640039FA38 /* JWDPreView.h */,
+				766A1F891DD428640039FA38 /* JWDPreView.m */,
 				766A1F7A1DD40F9A0039FA38 /* Main.storyboard */,
 				766A1F7D1DD40F9A0039FA38 /* Assets.xcassets */,
 				766A1F7F1DD40F9A0039FA38 /* LaunchScreen.storyboard */,
@@ -153,6 +163,8 @@
 			files = (
 				766A1F791DD40F9A0039FA38 /* ViewController.m in Sources */,
 				766A1F761DD40F9A0039FA38 /* AppDelegate.m in Sources */,
+				766A1F8D1DD450890039FA38 /* JWDQRCodeViewController.m in Sources */,
+				766A1F8A1DD428640039FA38 /* JWDPreView.m in Sources */,
 				766A1F731DD40F9A0039FA38 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
