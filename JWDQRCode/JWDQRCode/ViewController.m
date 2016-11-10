@@ -53,14 +53,23 @@
 
 - (void)code1DidClick {
 
-    JWDCreatQRCodeView *creatQRCodeView = [[JWDCreatQRCodeView alloc] initWithFrame:CGRectMake((self.view.frame.size.width-200)*0.5, 300, 200, 200) withQRCodeString:@"http://www.jianshu.com/users/5b9953c3d3ad/latest_articles" withQRCodeCenterImage:@"me"];
+    UIView *qrCodeView = [[UIView alloc] initWithFrame:CGRectMake((self.view.frame.size.width-200)*0.5, 250, 200, 220)];
+    [self.view addSubview:qrCodeView];
+    
+    JWDCreatQRCodeView *creatQRCodeView = [[JWDCreatQRCodeView alloc] initWithFrame:CGRectMake(0, 0, 200, 200) withQRCodeString:@"http://www.jianshu.com/users/5b9953c3d3ad/latest_articles" withQRCodeCenterImage:@"me"];
     self.creatQRCodeView = creatQRCodeView;
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, 200, 20)];
+    label.text = @"长按识别二维码，跳转网页";
+    label.font = [UIFont systemFontOfSize:12];
+    label.textAlignment = NSTextAlignmentCenter;
+    [qrCodeView addSubview:label];
     
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressDid)];
     creatQRCodeView.userInteractionEnabled = YES;
     [creatQRCodeView addGestureRecognizer:longPress];
     
-    [self.view addSubview:creatQRCodeView];
+    [qrCodeView addSubview:creatQRCodeView];
     
 }
 
