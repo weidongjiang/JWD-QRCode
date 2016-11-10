@@ -75,5 +75,9 @@
     // 5 获取绘制好的二维码
     self.image = filnalImage;
 }
-
 @end
+
+
+
+
+

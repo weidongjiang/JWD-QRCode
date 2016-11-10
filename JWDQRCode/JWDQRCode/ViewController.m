@@ -15,8 +15,9 @@
 
 @interface ViewController ()
 
-@property(nonatomic, strong)UIButton *code;//!< <#value#>
-@property(nonatomic, strong)UIButton *code1;//!< <#value#>
+@property(nonatomic, strong)UIButton              *code;//!< <#value#>
+@property(nonatomic, strong)UIButton              *code1;//!< <#value#>
+@property(nonatomic, strong)JWDCreatQRCodeView    *creatQRCodeView;//!< <#value#>
 
 @end
 
@@ -42,10 +43,6 @@
     [_code1 addTarget:self action:@selector(code1DidClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_code1];
     
-    
-    
-    
-
 }
 - (void)codeDidClick {
     
@@ -57,7 +54,40 @@
 - (void)code1DidClick {
 
     JWDCreatQRCodeView *creatQRCodeView = [[JWDCreatQRCodeView alloc] initWithFrame:CGRectMake((self.view.frame.size.width-200)*0.5, 300, 200, 200) withQRCodeString:@"http://www.jianshu.com/users/5b9953c3d3ad/latest_articles" withQRCodeCenterImage:@"me"];
+    self.creatQRCodeView = creatQRCodeView;
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressDid)];
+    creatQRCodeView.userInteractionEnabled = YES;
+    [creatQRCodeView addGestureRecognizer:longPress];
+    
     [self.view addSubview:creatQRCodeView];
+    
+}
+
+- (void)longPressDid{
+    
+    // 0.创建上下文
+    CIContext *context = [[CIContext alloc] init];
+    
+    // 1.创建一个探测器
+    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:context options:@{CIDetectorAccuracy: CIDetectorAccuracyLow}];
+    
+    // 2.直接开始识别图片,获取图片特征
+    CIImage *imageCI = [[CIImage alloc] initWithImage:self.creatQRCodeView.image];
+    NSArray<CIFeature *> *features = [detector featuresInImage:imageCI];
+    CIQRCodeFeature *codef = (CIQRCodeFeature *)features.firstObject;
+    
+    // 弹框
+    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"识别图中二维码" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"取消");
+    }]];
+    __weak ViewController *weakSelf = self;
+    [alertC addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:codef.messageString]];
+        [weakSelf presentViewController:safariVC animated:YES completion:nil];
+    }]];
+    [self presentViewController:alertC animated:YES completion:nil];
     
 }
 

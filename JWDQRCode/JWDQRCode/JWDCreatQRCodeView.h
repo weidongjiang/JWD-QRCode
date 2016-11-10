@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^distinguishQRCode) (NSString *qRCodeUrl);
+
+
 @interface JWDCreatQRCodeView : UIImageView
+
+@property (nonatomic, copy) distinguishQRCode   distinguishQRCode;//!< 识别二维码跳转
 
 - (instancetype)initWithFrame:(CGRect)frame withQRCodeString:(NSString *)qRCodeString withQRCodeCenterImage:(NSString *)qRCodeCenterImage;
 

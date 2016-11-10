@@ -69,7 +69,6 @@
     } completion:^(BOOL finished) {
         _lineImageView.frame = CGRectMake(30, 10, 220, 2);
     }];
-    NSLog(@"88888888888888888888");
 }
 
 - (void)backButtonDid {
