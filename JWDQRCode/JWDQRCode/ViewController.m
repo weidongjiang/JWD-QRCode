@@ -11,6 +11,7 @@
 #import "JWDPreView.h"
 #import <SafariServices/SafariServices.h>
 #import "JWDQRCodeViewController.h"
+#import "JWDCreatQRCodeView.h"
 
 @interface ViewController ()
 
@@ -40,6 +41,10 @@
     [_code1 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [_code1 addTarget:self action:@selector(code1DidClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_code1];
+    
+    
+    
+    
 
 }
 - (void)codeDidClick {
@@ -51,6 +56,9 @@
 
 - (void)code1DidClick {
 
+    JWDCreatQRCodeView *creatQRCodeView = [[JWDCreatQRCodeView alloc] initWithFrame:CGRectMake((self.view.frame.size.width-100)*0.5, 300, 100, 100) withQRCodeString:@"http://www.jianshu.com/users/5b9953c3d3ad/latest_articles" withQRCodeCenterImage:@"me"];
+    [self.view addSubview:creatQRCodeView];
+    
 }
 
 - (void)didReceiveMemoryWarning {

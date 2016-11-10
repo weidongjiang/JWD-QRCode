@@ -15,6 +15,7 @@
 		766A1F811DD40F9A0039FA38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766A1F7F1DD40F9A0039FA38 /* LaunchScreen.storyboard */; };
 		766A1F8A1DD428640039FA38 /* JWDPreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 766A1F891DD428640039FA38 /* JWDPreView.m */; };
 		766A1F8D1DD450890039FA38 /* JWDQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766A1F8C1DD450890039FA38 /* JWDQRCodeViewController.m */; };
+		766A1F901DD456E50039FA38 /* JWDCreatQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 766A1F8F1DD456E50039FA38 /* JWDCreatQRCodeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		766A1F891DD428640039FA38 /* JWDPreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWDPreView.m; sourceTree = "<group>"; };
 		766A1F8B1DD450890039FA38 /* JWDQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWDQRCodeViewController.h; sourceTree = "<group>"; };
 		766A1F8C1DD450890039FA38 /* JWDQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWDQRCodeViewController.m; sourceTree = "<group>"; };
+		766A1F8E1DD456E50039FA38 /* JWDCreatQRCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWDCreatQRCodeView.h; sourceTree = "<group>"; };
+		766A1F8F1DD456E50039FA38 /* JWDCreatQRCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWDCreatQRCodeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 				766A1F781DD40F9A0039FA38 /* ViewController.m */,
 				766A1F8B1DD450890039FA38 /* JWDQRCodeViewController.h */,
 				766A1F8C1DD450890039FA38 /* JWDQRCodeViewController.m */,
+				766A1F8E1DD456E50039FA38 /* JWDCreatQRCodeView.h */,
+				766A1F8F1DD456E50039FA38 /* JWDCreatQRCodeView.m */,
 				766A1F881DD428640039FA38 /* JWDPreView.h */,
 				766A1F891DD428640039FA38 /* JWDPreView.m */,
 				766A1F7A1DD40F9A0039FA38 /* Main.storyboard */,
@@ -161,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				766A1F901DD456E50039FA38 /* JWDCreatQRCodeView.m in Sources */,
 				766A1F791DD40F9A0039FA38 /* ViewController.m in Sources */,
 				766A1F761DD40F9A0039FA38 /* AppDelegate.m in Sources */,
 				766A1F8D1DD450890039FA38 /* JWDQRCodeViewController.m in Sources */,
